@@ -1,8 +1,6 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../home/home_widget.dart';
-import '../registration/registration_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -20,7 +18,7 @@ class _ImportWidgetState extends State<ImportWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.tertiaryColor,
+      backgroundColor: Color(0xFFF5F5F5),
       body: SafeArea(
         child: Container(
           width: double.infinity,
@@ -32,34 +30,22 @@ class _ImportWidgetState extends State<ImportWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                      child: InkWell(
-                        onTap: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => HomeWidget(),
-                            ),
-                          );
-                        },
-                        child: Icon(
-                          Icons.arrow_back_outlined,
-                          color: Colors.black,
-                          size: 30,
-                        ),
-                      ),
+                    Icon(
+                      Icons.arrow_back_outlined,
+                      color: Colors.black,
+                      size: 24,
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(100, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(120, 0, 0, 0),
                       child: Text(
                         'MetaMask',
-                        style: FlutterFlowTheme.title2,
+                        textAlign: TextAlign.center,
+                        style: FlutterFlowTheme.title3,
                       ),
                     ),
                   ],
@@ -73,53 +59,41 @@ class _ImportWidgetState extends State<ImportWidget> {
                   children: [
                     Text(
                       'Wallet Setup',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.title1,
+                      style: FlutterFlowTheme.title3,
                     ),
                   ],
                 ),
               ),
-              Align(
-                alignment: AlignmentDirectional(0, 0),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 35, 0, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Import an exsisting wallet or create new one ',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
-                  ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Import an exsisting wallet or create new one ',
+                      style: FlutterFlowTheme.bodyText1,
+                    ),
+                  ],
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 300, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 400, 0, 0),
                 child: FFButtonWidget(
-                  onPressed: () async {
-                    await Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => RegistrationWidget(),
-                      ),
-                    );
+                  onPressed: () {
+                    print('Button pressed ...');
                   },
-                  text: 'Import using secret recory phrase\n',
+                  text: 'Import using secret recory phrase',
                   options: FFButtonOptions(
-                    width: 300,
+                    width: 320,
                     height: 60,
-                    color: Color(0xFFF7F7F8),
+                    color: FlutterFlowTheme.tertiaryColor,
                     textStyle: FlutterFlowTheme.subtitle2.override(
                       fontFamily: 'Poppins',
-                      color: Color(0xFF3474E0),
+                      color: FlutterFlowTheme.primaryColor,
                     ),
                     borderSide: BorderSide(
-                      color: Color(0xFF3474E0),
+                      color: FlutterFlowTheme.primaryColor,
                       width: 1,
                     ),
                     borderRadius: 50,
@@ -127,14 +101,14 @@ class _ImportWidgetState extends State<ImportWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                 child: FFButtonWidget(
                   onPressed: () {
                     print('Button pressed ...');
                   },
                   text: 'Create a new wallet',
                   options: FFButtonOptions(
-                    width: 300,
+                    width: 320,
                     height: 60,
                     color: FlutterFlowTheme.primaryColor,
                     textStyle: FlutterFlowTheme.subtitle2.override(
@@ -142,7 +116,7 @@ class _ImportWidgetState extends State<ImportWidget> {
                       color: Colors.white,
                     ),
                     borderSide: BorderSide(
-                      color: Color(0xFFF4EEEE),
+                      color: Colors.transparent,
                       width: 1,
                     ),
                     borderRadius: 50,
@@ -150,7 +124,7 @@ class _ImportWidgetState extends State<ImportWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 20),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,

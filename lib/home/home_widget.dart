@@ -96,7 +96,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   child: Image.network(
                                     'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/meta-mask-3lfhig/assets/wt4810a5juqd/m12.jpg',
                                     width: double.infinity,
-                                    height: 350,
+                                    height: 300,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
