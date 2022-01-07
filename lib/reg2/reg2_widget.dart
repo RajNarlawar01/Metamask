@@ -16,6 +16,7 @@ class Reg2Widget extends StatefulWidget {
 class _Reg2WidgetState extends State<Reg2Widget> {
   TextEditingController textController1;
   bool passwordVisibility1;
+  double sliderValue;
   TextEditingController textController2;
   bool passwordVisibility2;
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -83,7 +84,26 @@ class _Reg2WidgetState extends State<Reg2Widget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
-                  children: [],
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(40, 0, 0, 0),
+                      child: Container(
+                        width: 300,
+                        child: Slider(
+                          activeColor: FlutterFlowTheme.primaryColor,
+                          inactiveColor: Color(0xFF9E9E9E),
+                          min: 1,
+                          max: 3,
+                          value: sliderValue ??= 1,
+                          label: sliderValue.toString(),
+                          divisions: 2,
+                          onChanged: (newValue) {
+                            setState(() => sliderValue = newValue);
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Padding(

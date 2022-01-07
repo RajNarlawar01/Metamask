@@ -1,5 +1,6 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../flutter_flow/flutter_flow_video_player.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../reg2/reg2_widget.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ class Reg3Widget extends StatefulWidget {
 }
 
 class _Reg3WidgetState extends State<Reg3Widget> {
+  double sliderValue;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -70,7 +72,25 @@ class _Reg3WidgetState extends State<Reg3Widget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
-                    children: [],
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
+                        child: Container(
+                          width: 300,
+                          child: Slider(
+                            activeColor: FlutterFlowTheme.primaryColor,
+                            inactiveColor: Color(0xFF9E9E9E),
+                            min: 1,
+                            max: 3,
+                            value: sliderValue ??= 2,
+                            divisions: 2,
+                            onChanged: (newValue) {
+                              setState(() => sliderValue = newValue);
+                            },
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
@@ -92,10 +112,25 @@ class _Reg3WidgetState extends State<Reg3Widget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 10, 20, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
-                    children: [],
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 30, 0),
+                        child: FlutterFlowVideoPlayer(
+                          path:
+                              'assets/videos/Your_MetaMask_Secret_Recovery_Phrase.mp4',
+                          videoType: VideoType.asset,
+                          width: double.infinity,
+                          autoPlay: false,
+                          looping: true,
+                          showControls: true,
+                          allowFullScreen: true,
+                          allowPlaybackSpeedMenu: false,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Padding(

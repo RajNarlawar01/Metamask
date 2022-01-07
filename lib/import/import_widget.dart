@@ -1,6 +1,9 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../home/home_widget.dart';
+import '../reg2/reg2_widget.dart';
+import '../registration/registration_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -35,10 +38,20 @@ class _ImportWidgetState extends State<ImportWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Icon(
-                      Icons.arrow_back_outlined,
-                      color: Colors.black,
-                      size: 24,
+                    InkWell(
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomeWidget(),
+                          ),
+                        );
+                      },
+                      child: Icon(
+                        Icons.arrow_back_outlined,
+                        color: Colors.black,
+                        size: 24,
+                      ),
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(120, 0, 0, 0),
@@ -80,8 +93,13 @@ class _ImportWidgetState extends State<ImportWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 400, 0, 0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RegistrationWidget(),
+                      ),
+                    );
                   },
                   text: 'Import using secret recory phrase',
                   options: FFButtonOptions(
@@ -103,8 +121,13 @@ class _ImportWidgetState extends State<ImportWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Reg2Widget(),
+                      ),
+                    );
                   },
                   text: 'Create a new wallet',
                   options: FFButtonOptions(
